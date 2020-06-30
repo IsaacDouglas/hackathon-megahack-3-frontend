@@ -12,9 +12,9 @@ export const GoalList = ({permissions, ...props}) => {
         {...props} >
             {isSmall ? (
                 <SimpleList
-                    primaryText={record => `id: ${record.id}`}
-                    secondaryText={record => record.username}
-                    tertiaryText={record => ""}
+                    primaryText={record => record.title}
+                    secondaryText={record => record.description}
+                    tertiaryText={record => `id: ${record.id}`}
                 />
             ) : (
                 <Datagrid>

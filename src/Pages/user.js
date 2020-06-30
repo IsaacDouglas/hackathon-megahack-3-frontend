@@ -12,9 +12,9 @@ export const UserList = ({permissions, ...props}) => {
         {...props} >
             {isSmall ? (
                 <SimpleList
-                    primaryText={record => `id: ${record.id}`}
-                    secondaryText={record => record.name}
-                    tertiaryText={record => record.username}
+                    primaryText={record => record.name}
+                    secondaryText={record => record.username}
+                    tertiaryText={record => `id: ${record.id}`}
                 />
             ) : (
                 <Datagrid>
