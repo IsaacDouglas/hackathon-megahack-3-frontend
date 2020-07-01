@@ -16,7 +16,7 @@ export const UserList = ({permissions, ...props}) => {
                 <SimpleList
                     primaryText={record => record.name}
                     secondaryText={record => record.email}
-                    tertiaryText={record => `Admin: ${record.admin}`}
+                    tertiaryText={record => `Admin: ${record.points}`}
                 />
             ) : (
                 <Datagrid>
@@ -24,6 +24,7 @@ export const UserList = ({permissions, ...props}) => {
                     <TextField source="name" label="Nome"/>
                     <EmailField source="email" label="Email"/>
                     <BooleanField source="admin" label="Admin"/>
+                    <TextField source="points" label="Pontos"/>
                     <EditButton/>
                 </Datagrid>
             )}

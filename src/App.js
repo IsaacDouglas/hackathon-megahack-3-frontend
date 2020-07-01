@@ -6,6 +6,11 @@ import { GoalList, GoalEdit, GoalCreate } from './Pages/goal';
 import { AddressList, AddressEdit, AddressCreate } from './Pages/address';
 import { CategoryList, CategoryEdit, CategoryCreate } from './Pages/category';
 import { ProductList, ProductEdit, ProductCreate } from './Pages/product';
+import { AdvertisementList, AdvertisementEdit, AdvertisementCreate } from './Pages/advertisement';
+import { QRCodeList, QRCodeEdit, QRCodeCreate } from './Pages/qrcode';
+import { RestaurantList, RestaurantEdit, RestaurantCreate } from './Pages/restaurant';
+import { RecipeList, RecipeEdit, RecipeCreate } from './Pages/recipe';
+import { EventList, EventEdit, EventCreate } from './Pages/event';
 
 import authProvider from './Provider/authProvider';
 import dataProvider from './Provider/dataProvider';
@@ -15,6 +20,11 @@ import AddressIcon from '@material-ui/icons/Map';
 import CategoryIcon from '@material-ui/icons/Category';
 import ProductIcon from '@material-ui/icons/LocalBar';
 import GoalIcon from '@material-ui/icons/Star';
+import QRCodeIcon from '@material-ui/icons/Code';
+import AdvertisementIcon from '@material-ui/icons/ViewStream';
+import RestaurantIcon from '@material-ui/icons/Restaurant';
+import RecipeIcon from '@material-ui/icons/Receipt';
+import EventIcon from '@material-ui/icons/Event';
 
 import ptBrMessages from './language-pt-br';
 import polyglotI18nProvider from 'ra-i18n-polyglot';
@@ -53,7 +63,7 @@ const App = () => (
     />
     <Resource 
         icon={CategoryIcon} 
-        options={{ label: 'Categoria' }} 
+        options={{ label: 'Categorias' }} 
         name="category" 
         list={CategoryList} 
         edit={CategoryEdit} 
@@ -61,11 +71,51 @@ const App = () => (
     />
     <Resource 
         icon={ProductIcon} 
-        options={{ label: 'Produto' }} 
+        options={{ label: 'Produtos' }} 
         name="product" 
         list={ProductList} 
         edit={ProductEdit} 
         create={ProductCreate} 
+    />
+    <Resource 
+        icon={AdvertisementIcon} 
+        options={{ label: 'Anúncios' }} 
+        name="advertisement" 
+        list={AdvertisementList} 
+        edit={AdvertisementEdit} 
+        create={AdvertisementCreate} 
+    />
+    <Resource 
+        icon={QRCodeIcon} 
+        options={{ label: 'QRCode' }} 
+        name="qrcode"
+        list={QRCodeList} 
+        edit={QRCodeEdit} 
+        create={QRCodeCreate} 
+    />
+    <Resource 
+        icon={RestaurantIcon} 
+        options={{ label: 'Restaurantes' }} 
+        name="restaurant"
+        list={RestaurantList} 
+        edit={RestaurantEdit} 
+        create={RestaurantCreate} 
+    />
+    <Resource 
+        icon={RecipeIcon} 
+        options={{ label: 'Receitas' }} 
+        name="recipe"
+        list={RecipeList} 
+        edit={RecipeEdit} 
+        create={RecipeCreate} 
+    />
+    <Resource 
+        icon={EventIcon} 
+        options={{ label: 'Eventos' }} 
+        name="event"
+        list={EventList} 
+        edit={EventEdit} 
+        create={EventCreate} 
     />
     </Admin>
 );

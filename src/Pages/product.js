@@ -1,6 +1,6 @@
 import React from 'react';
 import { useMediaQuery } from '@material-ui/core';
-import { List, SimpleList, Datagrid, TextField, EditButton, Edit, SimpleForm, TextInput, Create, ReferenceField, ReferenceInput, SelectInput } from 'react-admin';
+import { List, SimpleList, Datagrid, TextField, EditButton, Edit, SimpleForm, TextInput, Create, ReferenceField, ReferenceInput, SelectInput, NumberInput } from 'react-admin';
 import { required } from 'react-admin';
 
 
@@ -9,7 +9,7 @@ export const ProductList = ({permissions, ...props}) => {
     
     return (
         <List
-        title="Endereços" 
+        title="Produtos" 
         {...props} >
             {isSmall ? (
                 <SimpleList
@@ -24,9 +24,11 @@ export const ProductList = ({permissions, ...props}) => {
                         <TextField source="title" />
                     </ReferenceField>
                     <TextField source="name" label="Nome"/>
+                    <TextField source="description" label="Descrição"/>
                     <TextField source="price" label="Preço"/>
                     <TextField source="ingredients_details" label="Ingredientes"/>
                     <TextField source="allergic_information" label="Alérgicos"/>
+                    <TextField source="milliliter" label="ML"/>
                     <EditButton/>
                 </Datagrid>
             )}
@@ -45,9 +47,11 @@ export const ProductEdit = props => (
                 <SelectInput optionText="title" />
             </ReferenceInput>
             <TextInput source="name" label="Nome" validate={required()}/>
+            <TextInput source="description" label="Descrição" validate={required()}/>
             <TextInput source="price" label="Preço" validate={required()}/>
             <TextInput source="ingredients_details" label="Ingredientes"/>
             <TextInput source="allergic_information" label="Alérgicos"/>
+            <NumberInput source="milliliter" label="ML"/>
         </SimpleForm>
     </Edit>
 );
@@ -59,9 +63,11 @@ export const ProductCreate = props => (
                 <SelectInput optionText="title" />
             </ReferenceInput>
             <TextInput source="name" label="Nome" validate={required()}/>
+            <TextInput source="description" label="Descrição" validate={required()}/>
             <TextInput source="price" label="Preço" validate={required()}/>
-            <TextInput source="ingredients_details" label="Complemento"/>
+            <TextInput source="ingredients_details" label="Ingredientes"/>
             <TextInput source="allergic_information" label="Alérgicos"/>
+            <NumberInput source="milliliter" label="ML"/>
         </SimpleForm>
     </Create>
 );
